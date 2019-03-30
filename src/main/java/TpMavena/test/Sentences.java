@@ -35,6 +35,7 @@ public class Sentences {
 	        pipeline.annotate(exampleAnnotation);
 	        FileOutputStream os = new FileOutputStream("nlp.xml");
 	        pipeline.xmlPrint(exampleAnnotation, os);
+	      
 	        
 	        List<CoreMap> sentences = exampleAnnotation.get(CoreAnnotations.SentencesAnnotation.class);
 
