@@ -1,0 +1,19 @@
+#!/bin/sh
+
+# Set these paths appropriately
+
+BIN="/home/yassine/Desktop/lemma/bin"
+CMD="/home/yassine/Desktop/lemma/cmd"
+LIB="/home/yassine/Desktop/lemma/lib"
+
+OPTIONS="-token -lemma -sgml"
+
+TOKENIZER=${CMD}/utf8-tokenize.perl
+MWL=${CMD}/mwl-lookup.perl
+TAGGER=${BIN}/tree-tagger
+PARFILE=${LIB}/ancient-greek-beta.par
+
+$TOKENIZER $* |
+# tagging
+$TAGGER $OPTIONS $PARFILE
+
